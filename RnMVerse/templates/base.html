@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Your Rick n Morty Character </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  </head>
+  <body>
+    <header>
+      <div class="nav-top">
+        <h1>
+          Wanna find your Rick and Morty character?
+        </h1>
+      </div>
+    </header>
+
+    <div>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
