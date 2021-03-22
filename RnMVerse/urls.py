@@ -21,5 +21,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', TemplateView.as_view(template_name = 'home.html')),
-    path('<int:id>/', include('queries.urls'), name = 'home'),
+    path('', include('queries.urls'), name = 'home'),
 ]
+
+# Program flow from .settings
+# Goes to the defined path. include() takes to another app in same project

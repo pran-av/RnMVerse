@@ -1,35 +1,31 @@
-from django.shortcuts import render
-from django.views import generic, View
+# import library to process post requests
+#import requests
+#import json
 
-# Create your views here.
+# import django libraries
+from django.shortcuts import render
+from django.views import generic
+
+# Import project classes
 from .models import YourCharacter
 
-class ShowQuery(generic.DetailView):
+class ShowQuery(generic.TemplateView):
     model = YourCharacter
     template_name = 'home.html'
+    #st: int
+    #bd: str
 
-    #context = ["Hello","Yo"]
+    recipe = YourCharacter.cookery()
+    print("Outside of class", recipe)
+    st, bd = YourCharacter.executeQuery(recipe)
+    print("Status:", st)
+    #print("Data:", bd)
 
-    def executeQuery(self, **kwargs):
-        query = """
-            query {
-              character(id: 125){
-                name
-                image
-                type
-                status
-                species
-                episode{
-                  episode
-                  name
-                }
-              }
-            }
-        """
-        url = 'https://rickandmortyapi.com/graphql'
+    #constructor
+    #def __init__(self):
+    #    print("Constructed!")
+    #    self.st = st
+    #    self.bd = bd
 
-        r = requests.post(url, json = {'query': query})
-        context = json.loads(r.text)
-        #status = r.status_code
-        id_ = self.kwargs.get("id")
-        return get_object_or_404(YourCharacter, id =id_)
+
+# Program flow passes to . urls
