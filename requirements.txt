@@ -4,6 +4,7 @@ chardet==4.0.0
 Django==3.1.7
 idna==2.10
 pytz==2021.1
+random2==1.0.1
 requests==2.25.1
 sqlparse==0.4.1
 urllib3==1.26.4

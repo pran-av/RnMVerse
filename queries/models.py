@@ -44,6 +44,7 @@ class YourCharacter(models.Model):
     def __str__(self):
         return self.body
 
+    # Declare a canonical url that points towards the object
     def get_absolute_url(self):
         return reverse('home', args = [str(self.id)])
 

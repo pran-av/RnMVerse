@@ -3,9 +3,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Following is the API call: {{ ShowQuery.st }}</h1>
+  <p>Request Status: {{ YourCharacter.status }}</p>
+  {% if objects %}
+    <h1>Following is the API call: {{ objects.status }}</h1>
+  {% else %}
+    <p>No object_list exist </p>
+  {% endif %}
 
-  <p>HEy: {{ ShowQuery.bd }}</p>
+  {% if YourCharacter %}
+    <p>HEy: {{ YourCharacter.body }}</p>
+  {% else %}
+    <p>No YourCharacter object</p>
+  {% endif %}
 
+  {% if yourcharacter %}
+    <p>HEy: {{ yourcharacter.body }}</p>
+  {% else %}
+    <p>No yourcharacter</p>
+  {% endif %}
 
 {% endblock %}
