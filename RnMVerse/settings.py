@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'queries',
 ]
-
+#print("Checking Installed Apps")
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -53,6 +53,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'RnMVerse.urls'
+
 
 TEMPLATES = [
     {
@@ -69,7 +70,7 @@ TEMPLATES = [
         },
     },
 ]
-
+#print("Settings: Checking Templates")
 WSGI_APPLICATION = 'RnMVerse.wsgi.application'
 
 
@@ -82,7 +83,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+#print("Settings: Checking Database Path")
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

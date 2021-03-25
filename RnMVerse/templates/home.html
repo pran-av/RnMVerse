@@ -3,7 +3,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p>Request Status: {{ YourCharacter.status }}</p>
+
+  <p>Request Status: {{ yourcharacter.body }}</p>
+
+
   {% if objects %}
     <h1>Following is the API call: {{ objects.status }}</h1>
   {% else %}

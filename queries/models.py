@@ -10,6 +10,7 @@ from django.urls import reverse
 class YourCharacter(models.Model):
     body = models.TextField()
     status = models.CharField(max_length = 100)
+    #print("Models: Inside App models")
 
     def executeQuery(recipe):
         query = """
@@ -33,8 +34,8 @@ class YourCharacter(models.Model):
         r = requests.post(url, json = {'query': query, 'variables': variables})
 
         body = r.json()
-        status = r.status_code
-        return status, body
+        #status = r.status_code
+        return body
 
     def cookery():
         recipe = random.randrange(1, 150)
