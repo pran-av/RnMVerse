@@ -8,56 +8,77 @@ from django.views import generic
 from django.http import JsonResponse
 
 # Import project classes
-from .models import YourCharacter
+from .services import YourCharacter
+#print(YourCharacter)
+
+# Class based views require project templates
+#class GetCharacter(generic.TemplateView):
+    #template_name = 'character.html'
+def character_detail_view(request):
+    #context = {}
+    #context["character_info"] = YourCharacter.get_character_info()
+    context = {
+        #'characters' : YourCharacter.executeQuery(5),
+        'character_info' : YourCharacter.get_character_info(),
+        'character_episodes' : YourCharacter.get_character_episodes(),
+    }
+    print("\nContext:", context)
+    return render(request, "queries/character.html", context)
+
+#character_detail_view()
+"""
+# Definition based views require app templates
+def character_detail_view(request):
+    #print(YourCharacter.recipe)
+    rcp = YourCharacter.recipe
+    print("Recipe in Views:", rcp)
+    context = {}
+    context["data"] = YourCharacter.executeQuery(YourCharacter.recipe)
+    print("Body:", context)
+    #query["data"] = context
+    return render(request, "queries/character.html", context)
+
+
+
+query = {}
+query["data"] = {}
+query["data"]["data"] = {}
+query["data"]["data"]["character"] = {}
 
 def get_character(request):
     #create a dictionary
     recipe = YourCharacter.cookery()
-    print("View: The random number is:",recipe)
-    #context = YourCharacter.executeQuery(recipe)
-    context = {}
+    print("View: The random number is:", recipe)
+    context = YourCharacter.executeQuery(recipe)
+
+
+    #context = {
+    #    'character' : YourCharacter.executeQuery(recipe)
+    #}
+
     # assign an object data
     #context["data"] = YourCharacter.objects.get(id = id)
-    context["data"]  = YourCharacter.executeQuery(recipe)
-    print("Views: Context:", context)
-    return JsonResponse(context, safe = False)
+    #context["data"]  = YourCharacter.executeQuery(recipe)
+    print("Context:", context)
+    return context
     #return render(request, 'queries/character.html', context)
 
-#print("Views: Inside Views")
-"""
 CREATION SCRIPT
 
 class ShowQuery(generic.TemplateView):
     model = YourCharacter
-    #template_name = 'home.html'
-    #st: int
-    #bd: str
-    #get_slug_field()
+
     def request_data():
-        # Below statement prints body location
-        #print(YourCharacter.body)
         recipe = YourCharacter.cookery()
         print("In request_data method", recipe)
         st, bd = YourCharacter.executeQuery(recipe)
         print("Status:", st)
-        #YourCharacter.status = st
-        #YourCharacter.body = bd
 
         return st, bd
 
-    #print("Data:", bd)
-
-# Printing before function call shows me the address
-#print("Outside the class ShowQuery", YourCharacter.status)
 ShowQuery.request_data()
 
 print(YourCharacter.status)
-#object.status
-    #constructor
-    #def __init__(self):
-    #    print("Constructed!")
-    #    self.st = st
-    #    self.bd = bd
 
 
 # Program flow passes to . urls

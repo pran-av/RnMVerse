@@ -1,8 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p>Request Status: </p>
-  <p>Request body: {{ data.context }}</p>
+  <h2>Character_Info: Your R and M chatacter is:</h2>
+  <p> {{ character_info }} </p>
+
+  {% for info in character_info %}
+    <p> {{ info }} </p>
+  {% endfor %}
+
+  <h2>Episodes:</h2>
+  {% for episode in character_episodes  %}
+    <p> {{ episode }} </p>
+  {% endfor %}
 
 
 {% endblock content %}
