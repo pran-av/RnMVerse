@@ -4,34 +4,46 @@
 
 {% block content %}
 
-  <div class="character_image">
-    <h2>Your Rick and Morty character is:</h2>
-    <a href="{{character_info.1}}">
-      <img src="{{character_info.1}}" alt="{{character_info.0}}"
-      width="500" height="500">
-    </a>
-  </div>
+  <div class="mx-8 my-8 bg-green-800 rounded-lg shadow-xl space-y-4 px-5 py-5 font-semibold">
+    <div class="">
+      <h2 class="flex items-center justify-center text-xl">Your Rick and Morty character is:</h2>
+      <a href="{{character_info.1}}">
+        <img class="py-4 items-center justify-center" src="{{character_info.1}}" alt="{{character_info.0}}"
+        width="500" height="500">
+      </a>
+    </div>
 
-  <!-- stack: Python + Django Entire code on https://github.com/pran-av/RnMVerse
-  If you find a code snippet that can be written in a more efficient way, then
-  connect @ pranavdotexe(at)gmail.com and share
-  {% for info in character_info %}
-    <p> {{ info }} </p>
-  {% endfor %}
-  -->
-  <div class="character_info">
-    <p class = 'name'>Name: {{ character_info.0 }}</p>
-    <p class = 'type'>Type: {{ character_info.2 }}</p>
-    <p class = 'status'>Status: {{ character_info.3 }}</p>
-    <p class = 'species'>Species: {{ character_info.4 }}</p>
-  </div>
-
-  <div class="character_episodes">
-    <h2>Episodes:</h2>
-    {% for episode in character_episodes  %}
-      <p> {{ episode }} </p>
+    <!-- stack: Python + Django Entire code on https://github.com/pran-av/RnMVerse
+    If you find a code snippet that can be written in a more efficient way, then
+    connect @ pranavdotexe(at)gmail.com and share
+    {% for info in character_info %}
+      <p> {{ info }} </p>
     {% endfor %}
+    -->
+    <div class="items-center justify-center">
+      <p class = 'name'>Name: {{ character_info.0 }}</p>
+      <p class = 'type'>Type: {{ character_info.2 }}</p>
+      <p class = 'status'>Status: {{ character_info.3 }}</p>
+      <p class = 'species'>Species: {{ character_info.4 }}</p>
+    </div>
+
+    <div class="items-center justify-center">
+      <h2>Episodes:</h2>
+      {% for episode in character_episodes  %}
+        <p> {{ episode }} </p>
+      {% endfor %}
+    </div>
   </div>
 
+  <div class="container bg-green-50 mx-auto px-4 py-6 font-xl items-center">
+    <p>Share on Twitter!</p>
+    <p>{Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum.}</p>
+  </div>
 
 {% endblock content %}
