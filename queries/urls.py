@@ -16,7 +16,7 @@ urlpatterns = [
     #path('queries/character',
     #YourCharacter.as_view(template_name = 'queries/character.html'),
     #name = 'character'),
-    path('queries/character', character_detail_view),
+    path('', character_detail_view),
     #path('queries/character',
     #    GetCharacter.as_view(template_name = 'character_info.html'),
     #    name = 'character_info'),

@@ -1,17 +1,39 @@
+<!-- Archived templates/home.html
+
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>Character_Info: Your R and M chatacter is:</h2>
-  <p> {{ character_info }} </p>
 
+  <div class="character_image">
+    <h2>Your Rick and Morty character is:</h2>
+    <a href="{{character_info.1}}">
+      <img src="{{character_info.1}}" alt="{{character_info.0}}"
+      width="500" height="500">
+    </a>
+  </div>
+
+  <!-- stack: Python + Django Entire code on https://github.com/pran-av/RnMVerse
+  If you find a code snippet that can be written in a more efficient way, then
+  connect @ pranavdotexe(at)gmail.com and share
   {% for info in character_info %}
     <p> {{ info }} </p>
   {% endfor %}
+  
+  <div class="character_info">
+    <p class = 'name'>Name: {{ character_info.0 }}</p>
+    <p class = 'type'>Type: {{ character_info.2 }}</p>
+    <p class = 'status'>Status: {{ character_info.3 }}</p>
+    <p class = 'species'>Species: {{ character_info.4 }}</p>
+  </div>
 
-  <h2>Episodes:</h2>
-  {% for episode in character_episodes  %}
-    <p> {{ episode }} </p>
-  {% endfor %}
+  <div class="character_episodes">
+    <h2>Episodes:</h2>
+    {% for episode in character_episodes  %}
+      <p> {{ episode }} </p>
+    {% endfor %}
+  </div>
 
 
 {% endblock content %}
+
+-->

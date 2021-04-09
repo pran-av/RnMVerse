@@ -4,25 +4,34 @@
 
 {% block content %}
 
-  <p>Request Status: {{ yourcharacter.body }}</p>
+  <div class="character_image">
+    <h2>Your Rick and Morty character is:</h2>
+    <a href="{{character_info.1}}">
+      <img src="{{character_info.1}}" alt="{{character_info.0}}"
+      width="500" height="500">
+    </a>
+  </div>
+
+  <!-- stack: Python + Django Entire code on https://github.com/pran-av/RnMVerse
+  If you find a code snippet that can be written in a more efficient way, then
+  connect @ pranavdotexe(at)gmail.com and share
+  {% for info in character_info %}
+    <p> {{ info }} </p>
+  {% endfor %}
+  -->
+  <div class="character_info">
+    <p class = 'name'>Name: {{ character_info.0 }}</p>
+    <p class = 'type'>Type: {{ character_info.2 }}</p>
+    <p class = 'status'>Status: {{ character_info.3 }}</p>
+    <p class = 'species'>Species: {{ character_info.4 }}</p>
+  </div>
+
+  <div class="character_episodes">
+    <h2>Episodes:</h2>
+    {% for episode in character_episodes  %}
+      <p> {{ episode }} </p>
+    {% endfor %}
+  </div>
 
 
-  {% if objects %}
-    <h1>Following is the API call: {{ objects.status }}</h1>
-  {% else %}
-    <p>No object_list exist </p>
-  {% endif %}
-
-  {% if YourCharacter %}
-    <p>HEy: {{ YourCharacter.body }}</p>
-  {% else %}
-    <p>No YourCharacter object</p>
-  {% endif %}
-
-  {% if yourcharacter %}
-    <p>HEy: {{ yourcharacter.body }}</p>
-  {% else %}
-    <p>No yourcharacter</p>
-  {% endif %}
-
-{% endblock %}
+{% endblock content %}

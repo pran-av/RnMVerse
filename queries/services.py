@@ -42,7 +42,7 @@ class YourCharacter():
         gci_list = []
         for key in query['data']['character']:
             if (key != 'episode'):
-                gci = key + ': ' + query['data']['character'][key]
+                gci = query['data']['character'][key]
                 #print(key + ':', query['data']['data']['character'][key])
                 print(gci)
                 gci_list.append(gci)

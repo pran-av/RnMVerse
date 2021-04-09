@@ -23,7 +23,7 @@ def character_detail_view(request):
         'character_episodes' : YourCharacter.get_character_episodes(),
     }
     print("\nContext:", context)
-    return render(request, "queries/character.html", context)
+    return render(request, "home.html", context)
 
 #character_detail_view()
 """
