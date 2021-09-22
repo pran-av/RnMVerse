@@ -10,3 +10,5 @@ Deploy using Heroku.
 Version Control.
 
 Stack: GraphQL, Django, Python, Tailwind
+
+Access the App @ https://rnmverse.herokuapp.com/
